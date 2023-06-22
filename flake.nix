@@ -28,6 +28,9 @@
               touch .envrc
               echo "use flake" > .envrc
               direnv allow
+              git add -A
+              git commit -m "Init $language project"
+              gh repo create
             '';
           };
         };
