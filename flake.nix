@@ -12,7 +12,7 @@
           packages.default = pkgs.writeShellApplication {
             name = "init";
 
-            runtimeInputs = with pkgs; [ direnv git nix ];
+            runtimeInputs = with pkgs; [ direnv git nix gh];
 
             text = ''
               printf "What language? \n\n Supported options:\n - rust \n - svelte \n\n language: "
