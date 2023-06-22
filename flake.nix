@@ -12,7 +12,7 @@
           packages.default = pkgs.writeShellApplication {
             name = "init";
 
-            runtimeInputs = with pkgs; [ direnv git nix gh];
+            runtimeInputs = with pkgs; [ direnv git nix ];
 
             text = ''
               printf "What language? \n\n Supported options:\n - rust \n - svelte \n\n language: "
@@ -30,7 +30,6 @@
               direnv allow
               git add -A
               git commit -m "Init $language project"
-              gh repo create
             '';
           };
         };
