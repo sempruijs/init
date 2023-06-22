@@ -15,13 +15,16 @@
             runtimeInputs = with pkgs; [ direnv git nix ];
 
             text = ''
+              printf "What language? \n\n Supported options:\n - rust \n - svelte \n\n language: "
+              read -r language
+
               echo -n "project name: "
               read -r name
 
               mkdir "$name"
               cd "$name"
               git init
-              nix flake init -t "github:cor/flake-templates#rust"
+              nix flake init -t "github:sempruijs/flake-templates#$language"
               touch .envrc
               echo "use flake" > .envrc
               direnv allow
