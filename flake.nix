@@ -15,7 +15,7 @@
             runtimeInputs = with pkgs; [ direnv git nix ];
 
             text = ''
-              printf "What language? \n\n Supported options:\n - rust \n - svelte \n\n language: "
+              printf "What language? \n\n Supported options:\n - rust \n - svelte \n - template\n\n language: "
               read -r language
 
               echo -n "project name: "
